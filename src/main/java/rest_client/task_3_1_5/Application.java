@@ -14,7 +14,10 @@ public class Application {
     static public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
-
+    @Bean
+    static public HttpHeaders getHttp() {
+        return new HttpHeaders();
+    }
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
         User userJames = new User(3L, "James", "Brown", (byte) 33);
@@ -26,8 +29,5 @@ public class Application {
         connection.deleteUser(3L);
     }
 
-    @Bean
-    static public HttpHeaders getHttp() {
-        return new HttpHeaders();
-    }
+
 }
